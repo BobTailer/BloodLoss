@@ -2,41 +2,63 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Следующая операция</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Лента операций</title>
     <link rel="stylesheet" href="/static/stiles/order_style.css">
 </head>
 <body>
     <div class="content">
-        <div class="order-page">
-            <div class="service-card">
-                <img src="{{ .mediaURL }}/{{ .order.Operation.Avatar }}" alt="Операция" class="service-avatar">
-                <div class="service-name">{{ .order.Operation.Name }}</div>
-                <div class="metrics">
-                    <div class="metric">
-                        <span>Hb до</span>
-                        <strong>{{ printf "%.0f" .order.Operation.HbBefore }}</strong>
+        <main class="order-page" aria-label="Лента операций">
+                {{ range .operations }}
+                <article class="service-card">
+                    <img src="{{ $.mediaURL }}/{{ .Video }}" alt="Видео операции: {{ .Name }}" class="service-avatar" loading="lazy">
+                    <div class="service-name">{{ .Name }}</div>
+                    <div class="metrics">
+                        <div class="metric">
+                            <span>Hb до</span>
+                            <strong>{{ printf "%.0f" .HbBefore }}</strong>
+                        </div>
+                        <div class="metric">
+                            <span>Hb после</span>
+                            <strong>{{ printf "%.0f" .HbAfter }}</strong>
+                        </div>
                     </div>
-                    <div class="metric">
-                        <span>Hb после</span>
-                        <strong>{{ printf "%.0f" .order.Operation.HbAfter }}</strong>
+                    <div class="card-actions">
+                        <button class="like-btn" type="button" aria-label="Поставить лайк" aria-pressed="false">
+                            <span class="like-icon" aria-hidden="true">&#9825;</span>
+                            <span class="like-count">0</span>
+                        </button>
+                        <button type="button" class="next-btn">Следующая</button>
                     </div>
+                </article>
+                {{ else }}
+                <div class="feed-empty">
+                    <h2>Публикаций пока нет</h2>
+                    <a href="/add">Добавить операцию</a>
                 </div>
-                <div class="card-actions">
-                    <button class="like-btn" type="button" aria-label="Поставить лайк" aria-pressed="false">
-                        <span class="like-icon" aria-hidden="true">&#9825;</span>
-                        <span class="like-count">0</span>
-                    </button>
-                    <button type="button" class="next-btn">Следующая</button>
-                </div>
-            </div>
-        </div>
+                {{ end }}
+        </main>
     </div>
     <nav class="bottom-nav" aria-label="Основная навигация">
-        <a href="/order/1" class="nav-btn active">Лента</a>
+        <a href="/order/1" class="nav-btn active" aria-current="page">Лента</a>
         <a href="/add" class="nav-btn">Добавление</a>
         <a href="/services" class="nav-btn">Плитка</a>
     </nav>
     <script>
+        document.querySelectorAll('.service-avatar').forEach(function (image) {
+            if (!/\.(mp4|webm|ogg)(?:$|[?#])/i.test(image.src)) return;
+            var video = document.createElement('video');
+            video.className = image.className;
+            video.src = image.src;
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+            video.controls = true;
+            video.setAttribute('aria-label', image.alt);
+            image.replaceWith(video);
+        });
+
         document.querySelectorAll('.like-btn').forEach(function (button) {
             button.addEventListener('click', function () {
                 var liked = button.getAttribute('aria-pressed') === 'true';

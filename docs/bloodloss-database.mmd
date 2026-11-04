@@ -1,0 +1,36 @@
+erDiagram
+    USERS ||--o{ SERVICES : creates
+    USERS ||--o{ LIKES : adds
+    SERVICES ||--o{ LIKES : receives
+
+    USERS {
+        bigint id PK
+        varchar name "NOT NULL, max 120"
+        timestamptz created_at
+        timestamptz updated_at
+    }
+
+    SERVICES {
+        bigint id PK
+        varchar name "NOT NULL, max 200"
+        varchar short_description "max 500"
+        varchar status "NOT NULL, default draft"
+        varchar image_url "max 255"
+        varchar video_url "max 255"
+        double hb_before "NOT NULL, default 0"
+        double hb_after "NOT NULL, default 0"
+        timestamptz date_created "NOT NULL"
+        timestamptz date_formation "nullable"
+        bigint created_by FK "NOT NULL"
+        timestamptz updated_at
+    }
+
+    LIKES {
+        bigint id PK
+        bigint user_id FK "NOT NULL"
+        bigint service_id FK "NOT NULL"
+        timestamptz created_at
+    }
+
+%% Composite unique index: UNIQUE(user_id, service_id), so one user can like a service only once.
+%% Service deletion is logical: status changes to 'удален'; the row remains in the table.

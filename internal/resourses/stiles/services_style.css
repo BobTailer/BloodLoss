@@ -10,6 +10,11 @@ body {
     padding-top: 34px;
     padding-bottom: 92px;
 }
+.services-shell {
+    width: min(calc(100% - 24px), 520px);
+    margin: 0 auto;
+    box-sizing: border-box;
+}
 .bottom-nav {
     position: fixed;
     left: 0;
@@ -41,30 +46,30 @@ body {
     color: #0057a8;
 }
 .filter-bar {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    justify-content: center;
-    gap: 14px;
-    width: min(980px, 92vw);
+    gap: 8px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0;
     box-sizing: border-box;
 }
 .filter-label {
-    font-size: 20px;
+    grid-column: 1 / -1;
+    font-size: 16px;
     color: #17324d;
-    white-space: nowrap;
+    white-space: normal;
 }
 .filter-input {
-    flex: 1;
-    min-width: 220px;
-    max-width: 420px;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
     height: 44px;
     border: 1px solid #7b7b7b;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.45);
     color: #17324d;
-    font: 400 20px/1.2 Arial, sans-serif;
+    font: 400 16px/1.2 Arial, sans-serif;
     padding: 0 12px;
     outline: none;
 }
@@ -73,13 +78,14 @@ body {
     box-shadow: 0 0 0 3px rgba(0, 87, 168, 0.12);
 }
 .filter-button {
-    min-width: 170px;
+    min-width: 0;
     height: 46px;
+    padding: 0 12px;
     border: none;
     border-radius: 12px;
     background: #1d1d1d;
     color: #fff;
-    font: 600 18px/1.2 Arial, sans-serif;
+    font: 600 14px/1.2 Arial, sans-serif;
     cursor: pointer;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.16);
 }
@@ -89,13 +95,15 @@ body {
 .patients-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(220px, 1fr));
-    gap: 22px;
+    gap: 14px;
     justify-content: center;
-    padding: 0 32px;
-    max-width: 760px;
-    margin: 28px auto 0 auto;
+    width: 100%;
+    margin: 20px auto 0;
 }
 .patient-card {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
     background: #fff;
     border: 1px solid #d6e5f2;
     border-radius: 16px;
@@ -218,6 +226,15 @@ body {
 @media (max-width: 560px) {
     .patients-list {
         grid-template-columns: 1fr;
-        padding: 0 18px;
     }
+}
+
+.bottom-nav {
+    right: auto;
+    left: 50%;
+    width: min(calc(100% - 24px), 520px);
+    box-sizing: border-box;
+    transform: translateX(-50%);
+    border-right: 1px solid #d6e5f2;
+    border-left: 1px solid #d6e5f2;
 }

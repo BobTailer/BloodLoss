@@ -68,15 +68,13 @@ func (h *Handler) OperationDetail(ctx *gin.Context) {
 }
 
 func (h *Handler) OrderDetail(ctx *gin.Context) {
-	idStr := ctx.Param("id")
-	id, _ := strconv.Atoi(idStr)
-	order := h.Repo.GetOrder(id)
-	if order.Operation.ID == 0 {
-		order, _ = h.Repo.GetOrderByPublished()
+	operations, err := h.Repo.GetPublishedServices()
+	if err != nil {
+		operations = h.Repo.GetOperations()
 	}
 	ctx.HTML(http.StatusOK, "order.html", gin.H{
-		"order":    order,
-		"mediaURL": mediaURL(),
+		"operations": operations,
+		"mediaURL":   mediaURL(),
 	})
 }
 

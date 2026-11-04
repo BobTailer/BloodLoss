@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>Заявка на расчёт</title>
+  <rect width="128" height="128" rx="28" fill="#e8f2fb"/>
+  <path d="M27 31h12l8 49h48l11-35H43" fill="none" stroke="#17324d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="53" cy="99" r="7" fill="#17324d"/>
+  <circle cx="88" cy="99" r="7" fill="#17324d"/>
+  <path d="M68 51v19M58.5 60.5h19" stroke="#0057a8" stroke-width="6" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>Поиск</title>
+  <rect width="128" height="128" rx="28" fill="#e8f2fb"/>
+  <circle cx="55" cy="55" r="27" fill="none" stroke="#17324d" stroke-width="9"/>
+  <path d="m76 76 25 25" stroke="#0057a8" stroke-width="10" stroke-linecap="round"/>
+</svg>

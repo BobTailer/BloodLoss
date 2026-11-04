@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title>Аппендэктомия</title><rect width="128" height="128" rx="28" fill="#e8f2fb"/>
+<path d="M36 48c0-13 12-23 28-23s28 10 28 23v36c0 13-12 23-28 23S36 97 36 84z" fill="#fff" stroke="#17324d" stroke-width="6"/>
+<path d="M64 25v14M51 42c8 5 18 5 26 0" fill="none" stroke="#5b8def" stroke-width="6" stroke-linecap="round"/>
+<path d="M76 67c11-9 19-6 21 2s-5 12-13 11M89 78c8 2 12 7 12 13" fill="none" stroke="#0057a8" stroke-width="7" stroke-linecap="round"/>
+<circle cx="97" cy="86" r="5" fill="#0057a8"><animate attributeName="r" values="4;7;4" dur="1.4s" repeatCount="indefinite"/></circle>
+</svg>

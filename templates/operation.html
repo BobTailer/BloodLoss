@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Операция: {{ .operation.Name }}</title>
+    <link rel="stylesheet" href="/static/stiles/operation_style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="detail-card-wrap">
+            <div class="detail-card">
+                <div class="detail-status">Статус: черновик</div>
+                <div class="detail-media-wrap">
+                    <div class="detail-media-box">
+                        <span class="detail-media-label">Фото</span>
+                        <img src="{{ $.mediaURL }}/{{ .operation.Photo }}" alt="Фото операции" class="detail-media">
+                    </div>
+                    <div class="detail-media-box detail-media-box-video">
+                        <span class="detail-media-label">Видео</span>
+                        <img src="{{ $.mediaURL }}/{{ .operation.Video }}" alt="Видео операции" class="detail-media detail-media-video">
+                    </div>
+                </div>
+
+                <form method="POST" action="/services/publish">
+                    <input type="hidden" name="id" value="{{ .operation.ID }}">
+
+                    <div class="detail-field-row">
+                        <label class="detail-field-label" for="operation-name">Название</label>
+                        <input id="operation-name" class="detail-input" type="text" name="name" value="{{ .operation.Name }}">
+                    </div>
+
+                    <div class="detail-field-row detail-field-row-description">
+                        <label class="detail-field-label" for="operation-description">Описание</label>
+                        <textarea id="operation-description" class="detail-input detail-textarea" name="description">{{ .operation.Description }}</textarea>
+                    </div>
+
+                    <div class="detail-metrics-row">
+                        <div class="detail-field-row detail-field-row-metric">
+                            <label class="detail-field-label" for="hb-before">Гемоглобин до</label>
+                            <input id="hb-before" class="detail-input" type="number" name="hb_before" value="{{ printf "%.0f" .operation.HbBefore }}">
+                        </div>
+                        <div class="detail-field-row detail-field-row-metric">
+                            <label class="detail-field-label" for="hb-after">Гемоглобин после</label>
+                            <input id="hb-after" class="detail-input" type="number" name="hb_after" value="{{ printf "%.0f" .operation.HbAfter }}">
+                        </div>
+                    </div>
+
+                    <div class="detail-field-row detail-field-row-description">
+                        <button type="submit" class="primary-action">Опубликовать</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <nav class="bottom-nav" aria-label="Основная навигация">
+        <a href="/order/1" class="nav-btn">Лента</a>
+        <a href="/add" class="nav-btn active">Добавление</a>
+        <a href="/services" class="nav-btn">Плитка</a>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>Домой</title>
+  <rect width="128" height="128" rx="28" fill="#e8f2fb"/>
+  <path d="M27 61 64 29l37 32" fill="none" stroke="#17324d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M36 57v41h56V57M54 98V72h20v26" fill="none" stroke="#17324d" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M83 39V28h10v20" fill="none" stroke="#0057a8" stroke-width="7" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление услуги</title>
+    <link rel="stylesheet" href="/static/stiles/operation_style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="detail-card-wrap">
+            <div class="detail-card">
+                <div class="detail-status">Статус: черновик</div>
+                <div class="detail-media-wrap">
+                    <div class="detail-media-box">
+                        <span class="detail-media-label">Фото</span>
+                        <img src="{{ $.mediaURL }}/{{ if .draft }}{{ .draft.ImageURL }}{{ else }}cesarean.svg{{ end }}" alt="Фото операции" class="detail-media">
+                    </div>
+                    <div class="detail-media-box detail-media-box-video">
+                        <span class="detail-media-label">Видео</span>
+                        <img src="{{ $.mediaURL }}/{{ if .draft }}{{ .draft.VideoURL }}{{ else }}cesarean-animated.svg{{ end }}" alt="Видео операции" class="detail-media detail-media-video">
+                    </div>
+                </div>
+
+                <form method="POST" action="/services/create" class="add-form">
+                    <div class="detail-field-row add-field-row">
+                        <label class="detail-field-label" for="service-name">Название</label>
+                        <input id="service-name" class="detail-input" type="text" name="name" value="{{ if .draft }}{{ .draft.Name }}{{ end }}" placeholder="Например: Кесарево сечение">
+                    </div>
+
+                    <div class="detail-field-row detail-field-row-description add-field-row">
+                        <label class="detail-field-label" for="service-description">Краткое описание</label>
+                        <textarea id="service-description" class="detail-input detail-textarea" name="description" placeholder="Кратко опишите услугу">{{ if .draft }}{{ .draft.ShortDescription }}{{ end }}</textarea>
+                    </div>
+
+                    <div class="detail-metrics-row">
+                        <div class="detail-field-row detail-field-row-metric add-field-row">
+                            <label class="detail-field-label" for="service-hb-before">Гемоглобин до</label>
+                            <input id="service-hb-before" class="detail-input" type="number" name="hb_before" value="{{ if .draft }}{{ printf "%.0f" .draft.HbBefore }}{{ end }}" placeholder="120">
+                        </div>
+                        <div class="detail-field-row detail-field-row-metric add-field-row">
+                            <label class="detail-field-label" for="service-hb-after">Гемоглобин после</label>
+                            <input id="service-hb-after" class="detail-input" type="number" name="hb_after" value="{{ if .draft }}{{ printf "%.0f" .draft.HbAfter }}{{ end }}" placeholder="95">
+                        </div>
+                    </div>
+
+                    <div class="detail-field-row add-field-row">
+                        <label class="detail-field-label" for="service-image">Фото URL</label>
+                        <input id="service-image" class="detail-input" type="text" name="imageURL" value="{{ if .draft }}{{ .draft.ImageURL }}{{ end }}" placeholder="http://example.com/photo.jpg">
+                    </div>
+
+                    <div class="detail-field-row add-field-row">
+                        <label class="detail-field-label" for="service-video">Видео URL</label>
+                        <input id="service-video" class="detail-input" type="text" name="videoURL" value="{{ if .draft }}{{ .draft.VideoURL }}{{ end }}" placeholder="http://example.com/video.mp4">
+                    </div>
+
+                    <div class="detail-field-row add-action-row">
+                        <button type="submit" class="primary-action">Далее</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <nav class="bottom-nav" aria-label="Основная навигация">
+        <a href="/order/1" class="nav-btn">Лента</a>
+        <a href="/add" class="nav-btn active">Добавление</a>
+        <a href="/services" class="nav-btn">Плитка</a>
+    </nav>
+</body>
+</html>

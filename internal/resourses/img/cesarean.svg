@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>Кесарево сечение</title>
+  <rect width="128" height="128" rx="28" fill="#e8f2fb"/>
+  <path d="M34 91c-5-17-1-38 12-51 10-10 26-10 36 0 13 13 17 34 12 51" fill="#fff" stroke="#17324d" stroke-width="6"/>
+  <circle cx="64" cy="56" r="15" fill="#e8f2fb" stroke="#0057a8" stroke-width="5"/>
+  <path d="M55 83h18" stroke="#0057a8" stroke-width="7" stroke-linecap="round"/>
+  <path d="M47 91h34" stroke="#17324d" stroke-width="7" stroke-linecap="round"/>
+  <path d="M64 49v14M57 56h14" stroke="#0057a8" stroke-width="4" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,148 @@
+body {
+    background: #eef6fd;
+    margin: 0;
+    color: #17324d;
+    font-family: Arial, sans-serif;
+}
+.content {
+    background: #eef6fd;
+    min-height: calc(100vh - 72px);
+    padding-top: 34px;
+    padding-bottom: 92px;
+}
+.bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: #ffffff;
+    border-top: 1px solid #d6e5f2;
+    box-shadow: 0 -6px 18px rgba(23, 50, 77, 0.08);
+    z-index: 50;
+}
+.nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #17324d;
+    background: transparent;
+    border: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.nav-btn.active,
+.nav-btn:hover {
+    background: #eef6fd;
+    color: #0057a8;
+}
+.order-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+}
+.service-card {
+    background: #fff;
+    border: 1px solid #d6e5f2;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 87, 168, 0.08);
+    padding: 20px 16px 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 260px;
+    width: 320px;
+    min-height: 320px;
+    position: relative;
+    justify-content: flex-start;
+}
+.service-avatar {
+    width: 112px;
+    height: 112px;
+    margin-bottom: 12px;
+}
+.service-name {
+    color: #17324d;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
+    margin-top: 6px;
+}
+.metrics {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.metric {
+    background: #f3f8ff;
+    border: 1px solid #d6e5f2;
+    border-radius: 10px;
+    padding: 8px 10px;
+    text-align: center;
+    color: #17324d;
+}
+.metric span {
+    display: block;
+    font-size: 11px;
+    opacity: 0.75;
+    margin-bottom: 3px;
+}
+.metric strong {
+    font-size: 15px;
+}
+.card-actions {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    margin: 4px 0 16px;
+}
+.like-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 62px;
+    border: 1px solid #d6e5f2;
+    border-radius: 8px;
+    background: #fff;
+    color: #0057a8;
+    cursor: pointer;
+    font: 500 15px Arial, sans-serif;
+    padding: 10px 10px;
+    transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.like-icon {
+    font-size: 18px;
+    line-height: 1;
+}
+.like-btn:hover,
+.like-btn.liked {
+    background: #0057a8;
+    border-color: #0057a8;
+    color: #fff;
+}
+.next-btn {
+    flex: 1;
+    border: none;
+    border-radius: 8px;
+    background: #e8f2fb;
+    color: #17324d;
+    font: 500 15px Arial, sans-serif;
+    padding: 10px 14px;
+    cursor: default;
+}
+@media (max-width: 520px) {
+    .service-card {
+        width: min(90vw, 320px);
+    }
+}

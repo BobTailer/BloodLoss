@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>Хирургическая операция</title>
+  <rect width="128" height="128" rx="28" fill="#e8f2fb"/>
+  <path d="M38 28h52v18H38z" fill="#5b8def"/>
+  <path d="M48 46h32v45H48z" fill="#fff" stroke="#17324d" stroke-width="5"/>
+  <path d="M40 91h48" stroke="#17324d" stroke-width="7" stroke-linecap="round"/>
+  <path d="M57 58h14M57 70h14" stroke="#5b8def" stroke-width="5" stroke-linecap="round"/>
+  <path d="M91 54v30M76 69h30" stroke="#0057a8" stroke-width="7" stroke-linecap="round"/>
+</svg>

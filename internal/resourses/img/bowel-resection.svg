@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>Резекция кишечника</title>
+  <rect width="128" height="128" rx="28" fill="#e8f2fb"/>
+  <path d="M34 43c0-12 19-12 19 0v14c0 12 19 12 19 0V43c0-12 19-12 19 0v30c0 12-19 12-19 0V59c0-12-19-12-19 0v14c0 12-19 12-19 0z" fill="none" stroke="#0057a8" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M63 36v52" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+  <path d="M58 42 68 52M68 42 58 52" stroke="#17324d" stroke-width="4" stroke-linecap="round"/>
+  <path d="M48 96h32" stroke="#17324d" stroke-width="7" stroke-linecap="round"/>
+</svg>
